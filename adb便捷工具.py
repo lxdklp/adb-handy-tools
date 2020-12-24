@@ -13,21 +13,23 @@ if 命令 == 2:
         print(请输入DPI120～320,默认320)
         命令 = input ()
         命令 = "adb shell wm density " + 命令
+        os.system(命令)
 if 命令 == 3:
         print("请输入直接adb shell指令")
         命令 = input()
         命令 = "adb shell " + 命令
+        os.system(命令)
 if 命令 == 4:
         print("是否要安装adb?(仅限termux)")
         print("[1]是 [2]否")
         命令 = input()
         命令 = int(命令)
         if 命令 == 1:
-                os.system("pkg install wget")
-                os.system("wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh")
-                os.system("bash InstallTools.sh")
+                os.system('bash -c "$(curl -L http://rendiix.github.io/install-repo.sh)"'')
+                os.system("pkg install git")
+                os.system("git clone https://github.com/rendiix/termux-adb-fastboot.git && cd termux-adb-fastboot && bash install.sh")
 if 命令 == 5:
-        print("adb便捷工具v1.0")
+        print("adb便捷工具v1.1")
         print("bilibili@楼下的苦力怕")
         print("基安@楼下的苦力怕")
         print("gayhub:https://github.com/lxdklp/adb-handy-tools")
